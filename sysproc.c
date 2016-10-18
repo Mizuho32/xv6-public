@@ -42,6 +42,24 @@ sys_getpid(void)
   return proc->pid;
 }
 
+int sys_getppid(void){ //Added
+  return proc->parent->pid;
+}
+
+int sys_getdate(void){
+  struct rtcdate *r;
+  //struct rtcdate r2;
+
+  if(argptr(0, (void*)&r, sizeof(*r)) < 0)
+    return -1;
+  //return getdate(r);
+  //return cmostime(r);
+  cmostime(r);
+  //r = &r2;
+  return 0;
+  //return 11451;
+}
+
 int
 sys_sbrk(void)
 {

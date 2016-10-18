@@ -20,6 +20,7 @@ int mkdir(char*);
 int chdir(char*);
 int dup(int);
 int getpid(void);
+int getppid(void);  //Added
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
@@ -37,3 +38,6 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+
+int getdate(struct rtcdate *dp);
+//int getdate(void);
